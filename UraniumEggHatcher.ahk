@@ -8,26 +8,26 @@ $runTimeRight := 2200
 $runTimeLeft := 3100
 
 f5::
-  $stop := 0
-  Loop, 
-  {
-  	Send {Right down}
-	Sleep $runTimeRight
-	Send {Right up}
-	Send {Left down}
-	Sleep $runTimeRight
-	if ($stop) {
-      Send {Left up}
-      return
-    }
-	Sleep $runTimeLeft
-	Send {Left up}
-	Send {Right down}
-	Sleep $runTimeLeft
-	if ($stop) {
+   $stop := 0
+   Loop,
+   {
+      Send {Right down}
+      Sleep $runTimeRight
       Send {Right up}
-      return
-    }
-  }
+      Send {Left down}
+      Sleep $runTimeRight
+      if ($stop) {
+         Send {Left up}
+         return
+      }
+      Sleep $runTimeLeft
+      Send {Left up}
+      Send {Right down}
+      Sleep $runTimeLeft
+      if ($stop) {
+         Send {Right up}
+         return
+      }
+}
 
 f6:: $stop := 1
