@@ -10,8 +10,15 @@
 #SingleInstance force
 #NoEnv
 
-runTimeRight := 2200
-runTimeLeft := 3100
+oneRunStepTime := 158
+oneBikeStairsStepTime := 306
+oneBikeStepTime := 82
+
+; These steps don't match the map exactly,
+; because they had to be tweak them slightly to get a better result.
+; The stairs might be messing it up more than the regular step times.
+runTimeRight := (20 * oneBikeStepTime) + (2 * oneBikeStairsStepTime)
+runTimeLeft := (32 * oneBikeStepTime) + (2 * oneBikeStairsStepTime)
 
 runner := null
 
